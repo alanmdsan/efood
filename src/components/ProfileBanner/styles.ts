@@ -11,16 +11,20 @@ export const Container = styled.header`
 `
 
 export const CartContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
+  padding-top: 64px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   color: ${colors.salmon};
   height: 184px;
 
   h3 {
     font-size: 18px;
     font-weight: 900;
+    padding-top: 16px;
+  }
+
+  .cartCount {
+    text-align: right;
   }
 `
 

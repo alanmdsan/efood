@@ -8,7 +8,7 @@ const ProfileBanner = () => (
       <S.CartContainer>
         <h3>Restaurantes</h3>
         <S.LogoImage src={logo} alt="efood" />
-        <h3>0 produtos(s) no carrinho</h3>
+        <h3 className="cartCount">0 produtos(s) no carrinho</h3>
       </S.CartContainer>
     </div>
     <S.ImageContainer>
