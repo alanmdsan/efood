@@ -30,5 +30,6 @@ export const CopyrightContainer = styled.div`
     font-size: 10px;
     font-weight: 400;
     color: ${colors.salmon};
+    line-height: 12px;
   }
 `

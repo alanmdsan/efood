@@ -4,7 +4,8 @@ export const colors = {
   white: '#FFFFFF',
   salmon: '#E66767',
   sand: '#FFF8F2',
-  darker_sand: '#FFEBD9'
+  darker_sand: '#FFEBD9',
+  black: '#000000'
 }
 
 export const GlobalCss = createGlobalStyle`
