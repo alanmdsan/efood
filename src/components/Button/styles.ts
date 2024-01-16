@@ -8,4 +8,6 @@ export const ButtonLink = styled(Link)`
   font-size: 14px;
   font-weight: 700;
   padding: 8px;
+  text-decoration: none;
+  display: inline-block;
 `

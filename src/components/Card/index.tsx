@@ -31,7 +31,9 @@ const Card = ({ name, description, image, infos, rating }: Props) => (
         </S.Rating>
       </S.ContainerName>
       <p>{description}</p>
-      <S.ContainerButton>{/* <Button to={name} /> */}</S.ContainerButton>
+      <S.ContainerButton>
+        <Button to={name} />
+      </S.ContainerButton>
     </S.ContainerDescription>
   </S.Container>
 )
