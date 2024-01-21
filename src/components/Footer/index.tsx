@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import * as S from './styles'
 
 import logo from '../../assets/images/logo.png'
@@ -7,7 +8,9 @@ import icon_twitter from '../../assets/images/icon_twitter.png'
 
 const Footer = () => (
   <S.FooterContainer>
-    <S.LogoImage src={logo} />
+    <Link to={'/'}>
+      <S.LogoImage src={logo} />
+    </Link>
     <S.SocialMediaContainer>
       <img src={icon_instagram} alt="Instagram" />
       <img src={icon_facebook} alt="Facebook" />

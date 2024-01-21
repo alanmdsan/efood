@@ -63,6 +63,11 @@ export const Overlay = styled.div`
   z-index: -1;
 `
 
+export const LogoContainer = styled.div`
+  text-align: center;
+`
+
 export const LogoImage = styled.img`
   margin: 0 auto;
+  cursor: pointer;
 `

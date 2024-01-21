@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import * as S from './styles'
 
 import logo from '../../assets/images/logo.png'
@@ -7,7 +8,11 @@ const ProfileBanner = () => (
     <div className="container">
       <S.CartContainer>
         <h3>Restaurantes</h3>
-        <S.LogoImage src={logo} alt="efood" />
+        <S.LogoContainer>
+          <Link to={'/'}>
+            <S.LogoImage src={logo} alt="efood" />
+          </Link>
+        </S.LogoContainer>
         <h3 className="cartCount">0 produtos(s) no carrinho</h3>
       </S.CartContainer>
     </div>
