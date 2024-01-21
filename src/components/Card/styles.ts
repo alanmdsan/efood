@@ -8,6 +8,11 @@ export const Container = styled.div`
 export const ContainerImage = styled.div`
   height: 217px;
   position: relative;
+  overflow: hidden;
+`
+
+export const Image = styled.img`
+  width: 100%;
 `
 
 export const ContainerDescription = styled.div`

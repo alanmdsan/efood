@@ -1,3 +1,4 @@
+import { sliceDescription } from '../../utils/functions'
 import * as S from './styles'
 import Tag from '../Tag'
 
@@ -5,21 +6,30 @@ import iconRating from '../../assets/images/star.png'
 import Button from '../Button'
 
 type Props = {
+  id: number
   name: string
   description: string
   image: string
-  infos: string[]
+  highlight: boolean
+  type: string
   rating: number
 }
 
-const Card = ({ name, description, image, infos, rating }: Props) => (
+const Card = ({
+  id,
+  name,
+  description,
+  image,
+  highlight,
+  type,
+  rating
+}: Props) => (
   <S.Container>
     <S.ContainerImage>
-      <img src={image} alt={name} />
+      <S.Image src={image} alt={name} />
       <S.Infos>
-        {infos.map((info) => (
-          <Tag key={info}>{info}</Tag>
-        ))}
+        {highlight && <Tag>Destaque da semana</Tag>}
+        {type && <Tag>{type}</Tag>}
       </S.Infos>
     </S.ContainerImage>
     <S.ContainerDescription>
@@ -30,9 +40,9 @@ const Card = ({ name, description, image, infos, rating }: Props) => (
           <S.IconRating src={iconRating} />
         </S.Rating>
       </S.ContainerName>
-      <p>{description}</p>
+      <p title={description}>{sliceDescription(description)}</p>
       <S.ContainerButton>
-        <Button to="/restaurant" />
+        <Button to={`restaurant/${id}`} />
       </S.ContainerButton>
     </S.ContainerDescription>
   </S.Container>

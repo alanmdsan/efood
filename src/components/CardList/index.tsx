@@ -1,4 +1,4 @@
-import Restaurant from '../../models/Restaurant'
+import { Restaurant } from '../../utils/typedElements'
 import Card from '../Card'
 import * as S from './styles'
 
@@ -13,11 +13,13 @@ const CardList = ({ restaurants }: Props) => (
         {restaurants.map((restaurant) => (
           <Card
             key={restaurant.id}
-            name={restaurant.name}
-            description={restaurant.description}
-            image={restaurant.image}
-            infos={restaurant.infos}
-            rating={restaurant.rating}
+            id={restaurant.id}
+            name={restaurant.titulo}
+            description={restaurant.descricao}
+            image={restaurant.capa}
+            highlight={restaurant.destacado}
+            type={restaurant.tipo}
+            rating={restaurant.avaliacao}
           />
         ))}
       </S.List>

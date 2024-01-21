@@ -1,4 +1,4 @@
-import Product from '../../models/Product'
+import { Product } from '../../utils/typedElements'
 import ProductCard from '../ProductCard'
 import * as S from './styles'
 
@@ -13,9 +13,9 @@ const ProductList = ({ products }: Props) => (
         {products.map((product) => (
           <ProductCard
             key={product.id}
-            name={product.name}
-            description={product.description}
-            image={product.image}
+            name={product.nome}
+            description={product.descricao}
+            image={product.foto}
           />
         ))}
       </S.List>
