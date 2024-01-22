@@ -16,6 +16,8 @@ const ProductList = ({ products }: Props) => (
             name={product.nome}
             description={product.descricao}
             image={product.foto}
+            portion={product.porcao}
+            price={product.preco}
           />
         ))}
       </S.List>
