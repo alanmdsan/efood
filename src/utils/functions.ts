@@ -5,6 +5,10 @@ export const sliceDescription = (description: string) => {
   return description
 }
 
+export const capitalizeFirst = (term: string) => {
+  return term.charAt(0).toUpperCase() + term.slice(1)
+}
+
 export const formatPrice = (price = 0) => {
   return new Intl.NumberFormat('pt-BR', {
     style: 'currency',

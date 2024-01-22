@@ -1,3 +1,4 @@
+import { sliceDescription } from '../../utils/functions'
 import * as S from './styles'
 
 type Props = {
@@ -9,11 +10,11 @@ type Props = {
 const ProductCard = ({ name, description, image }: Props) => (
   <S.Container>
     <S.ContainerImage>
-      <img src={image} alt={name} />
+      <S.Image src={image} alt={name} />
     </S.ContainerImage>
     <S.ContainerDescription>
       <h1>{name}</h1>
-      <p>{description}</p>
+      <p>{sliceDescription(description)}</p>
       <S.Button>Adicionar ao carrinho</S.Button>
     </S.ContainerDescription>
   </S.Container>

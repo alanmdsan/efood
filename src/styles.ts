@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 import { createGlobalStyle } from 'styled-components'
 
 export const colors = {
@@ -26,4 +27,14 @@ export const GlobalCss = createGlobalStyle`
     width: 100%;
     margin: 0 auto;
   }
+`
+
+export const LoadingContainer = styled.div`
+  text-align: center;
+`
+
+export const Loading = styled.img`
+  margin: 40px auto;
+  width: 40px;
+  height: 40px;
 `

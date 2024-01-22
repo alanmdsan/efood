@@ -40,7 +40,7 @@ const Card = ({
           <S.IconRating src={iconRating} />
         </S.Rating>
       </S.ContainerName>
-      <p title={description}>{sliceDescription(description)}</p>
+      <p>{sliceDescription(description)}</p>
       <S.ContainerButton>
         <Button to={`restaurant/${id}`} />
       </S.ContainerButton>

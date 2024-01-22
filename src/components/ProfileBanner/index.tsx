@@ -1,9 +1,15 @@
 import { Link } from 'react-router-dom'
+import { Restaurant } from '../../utils/typedElements'
+import { capitalizeFirst } from '../../utils/functions'
 import * as S from './styles'
 
 import logo from '../../assets/images/logo.png'
 
-const ProfileBanner = () => (
+export type Props = {
+  restaurant: Restaurant
+}
+
+const ProfileBanner = ({ restaurant }: Props) => (
   <S.Container>
     <div className="container">
       <S.CartContainer>
@@ -16,11 +22,11 @@ const ProfileBanner = () => (
         <h3 className="cartCount">0 produtos(s) no carrinho</h3>
       </S.CartContainer>
     </div>
-    <S.ImageContainer>
+    <S.ImageContainer restaurant={restaurant}>
       <S.Overlay />
       <div className="container">
-        <h4>Italiana</h4>
-        <h2>La Dolce Vita Trattoria</h2>
+        <h4>{capitalizeFirst(restaurant.tipo)}</h4>
+        <h2>{restaurant.titulo}</h2>
       </div>
     </S.ImageContainer>
   </S.Container>

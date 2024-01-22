@@ -1,9 +1,8 @@
 import styled from 'styled-components'
-
-import vector from '../../assets/images/vector.png'
-import trattoria_banner from '../../assets/images/trattoria_banner.png'
-
 import { colors } from '../../styles'
+import vector from '../../assets/images/vector.png'
+
+import { Props } from '.'
 
 export const Container = styled.header`
   background-image: url(${vector});
@@ -28,8 +27,8 @@ export const CartContainer = styled.div`
   }
 `
 
-export const ImageContainer = styled.div`
-  background-image: url(${trattoria_banner});
+export const ImageContainer = styled.div<Props>`
+  background-image: url(${(props) => props.restaurant.capa});
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

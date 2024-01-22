@@ -8,12 +8,18 @@ export const Container = styled.div`
 export const ContainerImage = styled.div`
   padding: 8px;
   height: 183px;
+  overflow: hidden;
+`
+
+export const Image = styled.img`
+  width: 100%;
 `
 
 export const ContainerDescription = styled.div`
   color: ${colors.darker_sand};
 
   h1 {
+    margin-top: 8px;
     margin-left: 8px;
     font-size: 16px;
     font-weight: 900;
