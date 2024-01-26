@@ -32,6 +32,7 @@ export const Sidebar = styled.aside`
   padding: 32px 8px 0;
   max-width: 360px;
   width: 100%;
+  overflow-y: scroll;
 `
 
 export const CartItem = styled.li`
@@ -95,4 +96,5 @@ export const Button = styled.button`
   cursor: pointer;
   border: 0;
   width: 100%;
+  margin-bottom: 8px;
 `
