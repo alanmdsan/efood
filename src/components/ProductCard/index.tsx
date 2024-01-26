@@ -27,7 +27,7 @@ const ProductCard = ({ name, description, image, portion, price }: Props) => {
           <h1>{name}</h1>
           <p>{sliceDescription(description)}</p>
           <S.Button onClick={() => setModalVisible(true)}>
-            Adicionar ao carrinho
+            Mais detalhes
           </S.Button>
         </S.ContainerDescription>
       </S.Container>
