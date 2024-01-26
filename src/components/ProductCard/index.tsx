@@ -1,31 +1,37 @@
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { add, open } from '../../store/reducers/cart'
 import { formatPrice, sliceDescription } from '../../utils/functions'
+import { Product } from '../../utils/typedElements'
 import * as S from './styles'
 
 import close from '../../assets/images/close.png'
 
 type Props = {
-  name: string
-  description: string
-  image: string
-  portion: string
-  price: number
+  product: Product
 }
 
-const ProductCard = ({ name, description, image, portion, price }: Props) => {
+const ProductCard = ({ product }: Props) => {
+  const dispatch = useDispatch()
   const [modalVisible, setModalVisible] = useState(false)
 
   const closeModal = () => setModalVisible(false)
+
+  const addToCart = () => {
+    closeModal()
+    dispatch(add(product))
+    dispatch(open())
+  }
 
   return (
     <>
       <S.Container>
         <S.ContainerImage>
-          <S.Image src={image} alt={name} />
+          <S.Image src={product.foto} alt={product.nome} />
         </S.ContainerImage>
         <S.ContainerDescription>
-          <h1>{name}</h1>
-          <p>{sliceDescription(description)}</p>
+          <h1>{product.nome}</h1>
+          <p>{sliceDescription(product.descricao)}</p>
           <S.Button onClick={() => setModalVisible(true)}>
             Mais detalhes
           </S.Button>
@@ -41,13 +47,13 @@ const ProductCard = ({ name, description, image, portion, price }: Props) => {
             style={{ cursor: 'pointer', float: 'right', margin: '8px' }}
           />
           <S.ModalFlex>
-            <S.ModalImage src={image} alt="" />
+            <S.ModalImage src={product.foto} alt="" />
             <div style={{ marginTop: '32px' }}>
-              <h4>{name}</h4>
-              <p>{description}</p>
-              <p>Serve de {portion}.</p>
-              <S.ModalButton>
-                Adicionar ao carrinho - {formatPrice(price)}
+              <h4>{product.nome}</h4>
+              <p>{product.descricao}</p>
+              <p>Serve de {product.porcao}.</p>
+              <S.ModalButton onClick={addToCart}>
+                Adicionar ao carrinho - {formatPrice(product.preco)}
               </S.ModalButton>
             </div>
           </S.ModalFlex>
