@@ -32,7 +32,7 @@ export const Sidebar = styled.aside`
   padding: 32px 8px 0;
   max-width: 360px;
   width: 100%;
-  overflow-y: scroll;
+  overflow-y: auto;
 `
 
 export const CartItem = styled.li`
