@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { Restaurant } from '../../utils/typedElements'
 import CardList from '../../components/CardList'
 import Hero from '../../components/Hero'
 import { Loading, LoadingContainer } from '../../styles'

@@ -1,4 +1,3 @@
-import { Product } from '../../utils/typedElements'
 import ProductCard from '../ProductCard'
 import * as S from './styles'
 

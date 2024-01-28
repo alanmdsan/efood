@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { Restaurant } from '../../utils/typedElements'
 import ProfileBanner from '../../components/ProfileBanner'
 import ProductList from '../../components/ProductList'
 import { Loading, LoadingContainer } from '../../styles'

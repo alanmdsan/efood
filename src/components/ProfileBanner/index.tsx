@@ -2,7 +2,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { RootReducer } from '../../store'
 import { open } from '../../store/reducers/cart'
-import { Restaurant } from '../../utils/typedElements'
 import { capitalizeFirst } from '../../utils/functions'
 import * as S from './styles'
 
@@ -30,8 +29,8 @@ const ProfileBanner = ({ restaurant }: Props) => {
               <S.LogoImage src={logo} alt="efood" />
             </Link>
           </S.LogoContainer>
-          <h3 className="cartCount" onClick={openCart}>
-            {items.length} produtos(s) no carrinho
+          <h3 role="button" className="cartCount" onClick={openCart}>
+            <span>{items.length} produto(s) no carrinho</span>
           </h3>
         </S.CartContainer>
       </div>

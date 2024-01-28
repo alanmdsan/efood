@@ -1,4 +1,4 @@
-export type Product = {
+declare type Product = {
   id: number
   nome: string
   descricao: string
@@ -7,7 +7,7 @@ export type Product = {
   preco: number
 }
 
-export type Restaurant = {
+declare type Restaurant = {
   id: number
   titulo: string
   descricao: string

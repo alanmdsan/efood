@@ -1,4 +1,3 @@
-import { Restaurant } from '../../utils/typedElements'
 import Card from '../Card'
 import * as S from './styles'
 

@@ -20,6 +20,10 @@ export const CartContainer = styled.div`
     font-size: 18px;
     font-weight: 900;
     padding-top: 16px;
+
+    span {
+      cursor: pointer;
+    }
   }
 
   .cartCount {

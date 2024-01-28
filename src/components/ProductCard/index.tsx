@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { add, open } from '../../store/reducers/cart'
 import { formatPrice, sliceDescription } from '../../utils/functions'
-import { Product } from '../../utils/typedElements'
 import * as S from './styles'
 
 import close from '../../assets/images/close.png'
