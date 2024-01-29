@@ -1,34 +1,15 @@
-import { useEffect, useState } from 'react'
+import { useGetRestaurantsQuery } from '../../services/api'
+
 import CardList from '../../components/CardList'
 import Hero from '../../components/Hero'
-import { Loading, LoadingContainer } from '../../styles'
-
-import loading from '../../assets/images/loading.gif'
 
 const Home = () => {
-  const [restaurants, setRestaurants] = useState<Restaurant[]>([])
-
-  useEffect(() => {
-    fetch('https://fake-api-tau.vercel.app/api/efood/restaurantes')
-      .then((res) => res.json())
-      .then((res) => setRestaurants(res))
-  }, [])
-
-  if (restaurants.length == 0) {
-    return (
-      <>
-        <Hero />
-        <LoadingContainer>
-          <Loading src={loading} alt="Carregando..." />
-        </LoadingContainer>
-      </>
-    )
-  }
+  const { data: restaurants, isLoading } = useGetRestaurantsQuery()
 
   return (
     <>
       <Hero />
-      <CardList restaurants={restaurants} />
+      <CardList restaurants={restaurants} isLoading={isLoading} />
     </>
   )
 }

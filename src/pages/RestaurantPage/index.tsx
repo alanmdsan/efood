@@ -1,28 +1,20 @@
-import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { useGetRestaurantQuery } from '../../services/api'
+
 import ProfileBanner from '../../components/ProfileBanner'
 import ProductList from '../../components/ProductList'
-import { Loading, LoadingContainer } from '../../styles'
+import Loader from '../../components/Loader'
 
-import loading from '../../assets/images/loading.gif'
+type RestaurantParams = {
+  id: string
+}
 
 const RestaurantPage = () => {
-  const { id } = useParams()
-
-  const [restaurant, setRestaurant] = useState<Restaurant>()
-
-  useEffect(() => {
-    fetch(`https://fake-api-tau.vercel.app/api/efood/restaurantes/${id}`)
-      .then((res) => res.json())
-      .then((res) => setRestaurant(res))
-  }, [id])
+  const { id } = useParams() as RestaurantParams
+  const { data: restaurant } = useGetRestaurantQuery(id)
 
   if (!restaurant) {
-    return (
-      <LoadingContainer>
-        <Loading src={loading} alt="Carregando..." />
-      </LoadingContainer>
-    )
+    return <Loader />
   }
 
   return (
