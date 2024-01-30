@@ -17,3 +17,37 @@ declare type Restaurant = {
   avaliacao: number
   cardapio: Product[]
 }
+
+declare type PurchaseProduct = {
+  id: number
+  price: number
+}
+
+declare type PurchasePayload = {
+  products: PurchaseProduct[]
+  delivery: {
+    receiver: string
+    address: {
+      description: string
+      city: string
+      zipCode: string
+      number: number
+      complement?: string
+    }
+  }
+  payment: {
+    card: {
+      name: string
+      number: string
+      code: number
+      expires: {
+        month: number
+        year: number
+      }
+    }
+  }
+}
+
+declare type PurchaseResponse = {
+  orderId: string
+}

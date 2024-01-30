@@ -3,6 +3,10 @@ import { colors } from '../../styles'
 
 import trashCan from '../../assets/images/trash-can.png'
 
+type InputGroupProps = {
+  inputWidth?: string
+}
+
 export const CartContainer = styled.div`
   position: fixed;
   top: 0;
@@ -33,6 +37,28 @@ export const Sidebar = styled.aside`
   max-width: 360px;
   width: 100%;
   overflow-y: auto;
+
+  .cart-text {
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 22px;
+    color: ${colors.darker_sand};
+  }
+
+  .empty-cart-text {
+    text-align: center;
+    margin: 8px;
+    font-size: 14px;
+    line-height: 22px;
+    color: ${colors.darker_sand};
+  }
+
+  h4 {
+    color: ${colors.darker_sand};
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
 `
 
 export const CartItem = styled.li`
@@ -97,4 +123,44 @@ export const Button = styled.button`
   border: 0;
   width: 100%;
   margin-bottom: 8px;
+
+  &:disabled {
+    color: ${colors.lighter_salmon};
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+`
+
+// form
+export const Row = styled.div`
+  display: flex;
+  column-gap: 32px;
+`
+
+export const InputGroup = styled.div<InputGroupProps>`
+  margin-top: 8px;
+
+  label {
+    color: ${colors.darker_sand};
+    margin-bottom: 8px;
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  input,
+  select {
+    color: ${colors.gray};
+    background-color: ${colors.darker_sand};
+    border: 1px solid ${colors.darker_sand};
+    height: 32px;
+    padding: 8px;
+    width: ${(props) => props.inputWidth || '100%'};
+    font-size: 14px;
+    font-weight: 700;
+
+    &.error {
+      border: 1px solid red;
+    }
+  }
 `
